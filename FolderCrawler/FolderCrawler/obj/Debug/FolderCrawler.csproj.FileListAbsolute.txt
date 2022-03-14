@@ -1,0 +1,9 @@
+D:\Kuliah\Tingkat 2\Semester 4\IF2211 - Strategi Algoritma\Soal\2022\folder-crawler\FolderCrawler\FolderCrawler\bin\Debug\FolderCrawler.exe.config
+D:\Kuliah\Tingkat 2\Semester 4\IF2211 - Strategi Algoritma\Soal\2022\folder-crawler\FolderCrawler\FolderCrawler\bin\Debug\FolderCrawler.exe
+D:\Kuliah\Tingkat 2\Semester 4\IF2211 - Strategi Algoritma\Soal\2022\folder-crawler\FolderCrawler\FolderCrawler\bin\Debug\FolderCrawler.pdb
+D:\Kuliah\Tingkat 2\Semester 4\IF2211 - Strategi Algoritma\Soal\2022\folder-crawler\FolderCrawler\FolderCrawler\obj\Debug\FolderCrawler.csproj.AssemblyReference.cache
+D:\Kuliah\Tingkat 2\Semester 4\IF2211 - Strategi Algoritma\Soal\2022\folder-crawler\FolderCrawler\FolderCrawler\obj\Debug\FolderCrawler.Properties.Resources.resources
+D:\Kuliah\Tingkat 2\Semester 4\IF2211 - Strategi Algoritma\Soal\2022\folder-crawler\FolderCrawler\FolderCrawler\obj\Debug\FolderCrawler.csproj.GenerateResource.cache
+D:\Kuliah\Tingkat 2\Semester 4\IF2211 - Strategi Algoritma\Soal\2022\folder-crawler\FolderCrawler\FolderCrawler\obj\Debug\FolderCrawler.csproj.CoreCompileInputs.cache
+D:\Kuliah\Tingkat 2\Semester 4\IF2211 - Strategi Algoritma\Soal\2022\folder-crawler\FolderCrawler\FolderCrawler\obj\Debug\FolderCrawler.exe
+D:\Kuliah\Tingkat 2\Semester 4\IF2211 - Strategi Algoritma\Soal\2022\folder-crawler\FolderCrawler\FolderCrawler\obj\Debug\FolderCrawler.pdb
