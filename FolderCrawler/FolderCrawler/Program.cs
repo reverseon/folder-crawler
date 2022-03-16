@@ -10,8 +10,8 @@ namespace FolderCrawler
 {
 	class Tree {
         // member variables
-        public Tree? parent; // Pointer to parent
-        public Tree[]? child; // Array of pointer to children
+        public Tree parent; // Pointer to parent
+        public Tree[] child; // Array of pointer to children
         public string content; // Isi dari Tree, berbentuk string
         public int children_count; // Jumlah child yang dimiliki suatu pohon
 
@@ -28,7 +28,6 @@ namespace FolderCrawler
             if (children_count > 0) child = new Tree[children_count];
         }
         
-
         // Check Index utk array child valid atau enggak
         private bool validChildIndex(int index){
             return (index < children_count && index >= 0);
@@ -40,14 +39,14 @@ namespace FolderCrawler
         // Nambah child sesuai index
         public void AddChild(int index, Tree c){
             if (validChildIndex(index)){
-                if (this.child is not null) this.child[index] = c;
+                if (this.child != null) this.child[index] = c;
                 c.parent = this;
             }
         }
         
         // Return string path dari Tree
         public string get_path(){
-            if (this.parent is not null){
+            if (this.parent != null){
                 return (parent.get_path() + "/" + this.content);
             } else {
                 return this.content;
@@ -61,16 +60,32 @@ namespace FolderCrawler
 	
     class Program
     {
+
         public static void Main()
         {
-            //Console.WriteLine("Enter the path of the root directory:");
-            var rootDirectorypath = "D:\\Kuliah\\Tingkat 2\\Semester 4\\IF2230 - Sistem Operasi\\Soal";
-
-            Console.WriteLine($"Getting directory tree of '{rootDirectorypath}'");
-            FolderCrawler.FolderFileDictionary d = new FolderFileDictionary();
-            d.CreateDirectoryTree(rootDirectorypath);
-            d.PrintDictionaryTree();
+            string path = "D:\\Kuliah\\Tingkat 2\\Semester 4\\IF2230 - Sistem Operasi\\Soal"; // Posisi Directory Awal
+            string target = "Quiz-3.pdf"; // file yang dicari
+            FolderFileDictionary x = new FolderFileDictionary();
+            x.CreateDirectoryTree(path);
+            //x.PrintDictionaryTree();
+            string resultBFS = x.BFS_OneFile(target);
+            string resultDFS = x.DFS_OneFile(target);
+            if(resultBFS != null)
+            {
+                Console.WriteLine(resultBFS);
+            }
+            else
+            {
+                Console.WriteLine("Null :(");
+            }
+            if (resultDFS != null)
+            {
+                Console.WriteLine(resultBFS);
+            }
+            else
+            {
+                Console.WriteLine("Null :(");
+            }
         }
-
     }
 }
