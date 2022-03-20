@@ -50,6 +50,9 @@
             this.btn_search = new System.Windows.Forms.Button();
             this.btn_interrupt = new System.Windows.Forms.Button();
             this.bg_searching = new System.ComponentModel.BackgroundWorker();
+            this.pnl_folderloc = new System.Windows.Forms.Panel();
+            this.lbl_time_elapsed = new System.Windows.Forms.Label();
+            this.lbl_time_elapsed_detail = new System.Windows.Forms.Label();
             this.method_panel_group.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -178,15 +181,13 @@
             // 
             // lbl_selecteddetail
             // 
-            this.lbl_selecteddetail.AutoSize = true;
             this.lbl_selecteddetail.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_selecteddetail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(227)))), ((int)(((byte)(150)))));
             this.lbl_selecteddetail.Location = new System.Drawing.Point(53, 214);
             this.lbl_selecteddetail.Name = "lbl_selecteddetail";
-            this.lbl_selecteddetail.Size = new System.Drawing.Size(45, 20);
+            this.lbl_selecteddetail.Size = new System.Drawing.Size(294, 55);
             this.lbl_selecteddetail.TabIndex = 11;
             this.lbl_selecteddetail.Text = "None";
-            this.lbl_selecteddetail.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // tbox_filename
             // 
@@ -305,12 +306,45 @@
             this.bg_searching.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.bg_searching_ProgressChanged);
             this.bg_searching.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bg_searching_RunWorkerCompleted);
             // 
+            // pnl_folderloc
+            // 
+            this.pnl_folderloc.AutoScroll = true;
+            this.pnl_folderloc.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pnl_folderloc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(227)))), ((int)(((byte)(150)))));
+            this.pnl_folderloc.Location = new System.Drawing.Point(470, 439);
+            this.pnl_folderloc.Name = "pnl_folderloc";
+            this.pnl_folderloc.Size = new System.Drawing.Size(633, 162);
+            this.pnl_folderloc.TabIndex = 20;
+            // 
+            // lbl_time_elapsed
+            // 
+            this.lbl_time_elapsed.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_time_elapsed.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(227)))), ((int)(((byte)(159)))));
+            this.lbl_time_elapsed.Location = new System.Drawing.Point(1125, 440);
+            this.lbl_time_elapsed.Name = "lbl_time_elapsed";
+            this.lbl_time_elapsed.Size = new System.Drawing.Size(125, 56);
+            this.lbl_time_elapsed.TabIndex = 21;
+            this.lbl_time_elapsed.Text = "Time Elapsed:";
+            // 
+            // lbl_time_elapsed_detail
+            // 
+            this.lbl_time_elapsed_detail.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_time_elapsed_detail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(227)))), ((int)(((byte)(159)))));
+            this.lbl_time_elapsed_detail.Location = new System.Drawing.Point(1125, 496);
+            this.lbl_time_elapsed_detail.Name = "lbl_time_elapsed_detail";
+            this.lbl_time_elapsed_detail.Size = new System.Drawing.Size(125, 56);
+            this.lbl_time_elapsed_detail.TabIndex = 22;
+            this.lbl_time_elapsed_detail.Text = "None";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(33)))));
             this.ClientSize = new System.Drawing.Size(1262, 673);
+            this.Controls.Add(this.lbl_time_elapsed_detail);
+            this.Controls.Add(this.lbl_time_elapsed);
+            this.Controls.Add(this.pnl_folderloc);
             this.Controls.Add(this.btn_interrupt);
             this.Controls.Add(this.btn_search);
             this.Controls.Add(this.method_panel_group);
@@ -332,6 +366,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form1";
             this.Text = "Folder Crawler";
+            this.Click += new System.EventHandler(this.btn_search_Click);
             this.method_panel_group.ResumeLayout(false);
             this.method_panel_group.PerformLayout();
             this.ResumeLayout(false);
@@ -362,6 +397,9 @@
         private System.Windows.Forms.Button btn_search;
         private System.Windows.Forms.Button btn_interrupt;
         private System.ComponentModel.BackgroundWorker bg_searching;
+        private System.Windows.Forms.Panel pnl_folderloc;
+        private System.Windows.Forms.Label lbl_time_elapsed;
+        private System.Windows.Forms.Label lbl_time_elapsed_detail;
     }
 }
 
