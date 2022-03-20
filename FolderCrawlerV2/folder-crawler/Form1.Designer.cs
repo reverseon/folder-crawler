@@ -136,7 +136,7 @@
             this.lbl_title.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(227)))), ((int)(((byte)(150)))));
             this.lbl_title.Location = new System.Drawing.Point(45, 27);
             this.lbl_title.Name = "lbl_title";
-            this.lbl_title.Size = new System.Drawing.Size(179, 43);
+            this.lbl_title.Size = new System.Drawing.Size(143, 36);
             this.lbl_title.TabIndex = 7;
             this.lbl_title.Text = "SETTINGS";
             this.lbl_title.Enter += new System.EventHandler(this.tbox_filename_clicked);
@@ -164,7 +164,7 @@
             this.lbl_startingfolder.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(227)))), ((int)(((byte)(150)))));
             this.lbl_startingfolder.Location = new System.Drawing.Point(49, 93);
             this.lbl_startingfolder.Name = "lbl_startingfolder";
-            this.lbl_startingfolder.Size = new System.Drawing.Size(298, 27);
+            this.lbl_startingfolder.Size = new System.Drawing.Size(230, 22);
             this.lbl_startingfolder.TabIndex = 9;
             this.lbl_startingfolder.Text = "SELECT STARTING FOLDER";
             // 
@@ -175,7 +175,7 @@
             this.lbl_selectedstartfolder.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(227)))), ((int)(((byte)(150)))));
             this.lbl_selectedstartfolder.Location = new System.Drawing.Point(50, 194);
             this.lbl_selectedstartfolder.Name = "lbl_selectedstartfolder";
-            this.lbl_selectedstartfolder.Size = new System.Drawing.Size(153, 20);
+            this.lbl_selectedstartfolder.Size = new System.Drawing.Size(136, 17);
             this.lbl_selectedstartfolder.TabIndex = 10;
             this.lbl_selectedstartfolder.Text = "SELECTED FOLDER:";
             // 
@@ -197,7 +197,7 @@
             this.tbox_filename.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(227)))), ((int)(((byte)(150)))));
             this.tbox_filename.Location = new System.Drawing.Point(53, 309);
             this.tbox_filename.Name = "tbox_filename";
-            this.tbox_filename.Size = new System.Drawing.Size(294, 31);
+            this.tbox_filename.Size = new System.Drawing.Size(294, 26);
             this.tbox_filename.TabIndex = 12;
             this.tbox_filename.Enter += new System.EventHandler(this.tbox_filename_clicked);
             this.tbox_filename.Leave += new System.EventHandler(this.tbox_filename_clicked);
@@ -209,7 +209,7 @@
             this.lbl_filename_title.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(227)))), ((int)(((byte)(150)))));
             this.lbl_filename_title.Location = new System.Drawing.Point(49, 269);
             this.lbl_filename_title.Name = "lbl_filename_title";
-            this.lbl_filename_title.Size = new System.Drawing.Size(194, 27);
+            this.lbl_filename_title.Size = new System.Drawing.Size(150, 22);
             this.lbl_filename_title.TabIndex = 13;
             this.lbl_filename_title.Text = "ENTER FILENAME";
             // 
@@ -220,7 +220,7 @@
             this.cbox_alloccurence.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(227)))), ((int)(((byte)(150)))));
             this.cbox_alloccurence.Location = new System.Drawing.Point(53, 346);
             this.cbox_alloccurence.Name = "cbox_alloccurence";
-            this.cbox_alloccurence.Size = new System.Drawing.Size(202, 24);
+            this.cbox_alloccurence.Size = new System.Drawing.Size(179, 21);
             this.cbox_alloccurence.TabIndex = 15;
             this.cbox_alloccurence.Text = "Find All Occurences";
             this.cbox_alloccurence.UseVisualStyleBackColor = true;
@@ -232,7 +232,7 @@
             this.lbl_method.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(227)))), ((int)(((byte)(150)))));
             this.lbl_method.Location = new System.Drawing.Point(49, 406);
             this.lbl_method.Name = "lbl_method";
-            this.lbl_method.Size = new System.Drawing.Size(90, 27);
+            this.lbl_method.Size = new System.Drawing.Size(70, 22);
             this.lbl_method.TabIndex = 16;
             this.lbl_method.Text = "METHOD";
             // 
@@ -254,7 +254,7 @@
             this.radio_dfs.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radio_dfs.Location = new System.Drawing.Point(3, 33);
             this.radio_dfs.Name = "radio_dfs";
-            this.radio_dfs.Size = new System.Drawing.Size(57, 24);
+            this.radio_dfs.Size = new System.Drawing.Size(50, 21);
             this.radio_dfs.TabIndex = 1;
             this.radio_dfs.TabStop = true;
             this.radio_dfs.Text = "DFS";
@@ -266,7 +266,7 @@
             this.radio_bfs.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radio_bfs.Location = new System.Drawing.Point(3, 3);
             this.radio_bfs.Name = "radio_bfs";
-            this.radio_bfs.Size = new System.Drawing.Size(57, 24);
+            this.radio_bfs.Size = new System.Drawing.Size(50, 21);
             this.radio_bfs.TabIndex = 0;
             this.radio_bfs.TabStop = true;
             this.radio_bfs.Text = "BFS";
@@ -338,7 +338,7 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(5F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(33)))));
             this.ClientSize = new System.Drawing.Size(1262, 673);
@@ -366,7 +366,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form1";
             this.Text = "Folder Crawler";
-            this.Click += new System.EventHandler(this.btn_search_Click);
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.method_panel_group.ResumeLayout(false);
             this.method_panel_group.PerformLayout();
             this.ResumeLayout(false);

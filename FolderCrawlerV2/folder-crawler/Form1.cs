@@ -565,5 +565,10 @@ namespace folder_crawler
                 Verb = "open"
             });
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
