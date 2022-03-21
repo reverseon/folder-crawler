@@ -1,0 +1,16 @@
+C:\reverseon\kuliah\code\STIMA\folder-crawler\folder-crawler\bin\Debug\folder-crawler.exe.config
+C:\reverseon\kuliah\code\STIMA\folder-crawler\folder-crawler\bin\Debug\folder-crawler.exe
+C:\reverseon\kuliah\code\STIMA\folder-crawler\folder-crawler\bin\Debug\folder-crawler.pdb
+C:\reverseon\kuliah\code\STIMA\folder-crawler\folder-crawler\obj\Debug\folder-crawler.csproj.AssemblyReference.cache
+C:\reverseon\kuliah\code\STIMA\folder-crawler\folder-crawler\obj\Debug\folder-crawler.csproj.SuggestedBindingRedirects.cache
+C:\reverseon\kuliah\code\STIMA\folder-crawler\folder-crawler\obj\Debug\folder_crawler.Properties.Resources.resources
+C:\reverseon\kuliah\code\STIMA\folder-crawler\folder-crawler\obj\Debug\folder-crawler.csproj.GenerateResource.cache
+C:\reverseon\kuliah\code\STIMA\folder-crawler\folder-crawler\obj\Debug\folder-crawler.csproj.CoreCompileInputs.cache
+C:\reverseon\kuliah\code\STIMA\folder-crawler\folder-crawler\obj\Debug\folder-crawler.exe
+C:\reverseon\kuliah\code\STIMA\folder-crawler\folder-crawler\obj\Debug\folder-crawler.pdb
+C:\reverseon\kuliah\code\STIMA\folder-crawler\folder-crawler\bin\Debug\AutomaticGraphLayout.dll
+C:\reverseon\kuliah\code\STIMA\folder-crawler\folder-crawler\bin\Debug\AutomaticGraphLayout.Drawing.dll
+C:\reverseon\kuliah\code\STIMA\folder-crawler\folder-crawler\bin\Debug\Microsoft.Msagl.GraphViewerGdi.dll
+C:\reverseon\kuliah\code\STIMA\folder-crawler\folder-crawler\bin\Debug\Microsoft.Msagl.WpfGraphControl.dll
+C:\reverseon\kuliah\code\STIMA\folder-crawler\folder-crawler\obj\Debug\folder-crawler.csproj.CopyComplete
+C:\reverseon\kuliah\code\STIMA\folder-crawler\folder-crawler\obj\Debug\folder_crawler.Form1.resources
