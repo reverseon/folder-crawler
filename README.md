@@ -2,7 +2,7 @@
 Aplikasi Desktop Folder Crawler dengan BFS dan DFS untuk Tugas Besar 2 Strategi Algoritma
 
 ## Deskripsi Singkat Program
-Program ini merupakan program pencarian folder berupa Aplikasi Desktop Folder Crawler dengan pengaplikasian algoritma Breadth First Search dan Depth First Search dalam pencarian suatu solusinya.
+Program ini merupakan program pencarian folder berupa Aplikasi Desktop Folder Crawler dengan pengaplikasian algoritma Breadth First Search dan Depth First Search dalam pencarian suatu solusinya. GUI menggunakan template Windows Forms App, dan visualisasi graf tree untuk pencarian solusi menggunakan MSAGL.
 
 ## Requirement Program dan Instalasi Module/Package
 - Visual Studio dengan .NET untuk C#
