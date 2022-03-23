@@ -94,18 +94,22 @@ namespace folder_crawler
                 string toparse = startingpath.Replace(startingpathGL, "");
                 string[] indifolder = toparse.Trim().Split(new[] { Path.DirectorySeparatorChar }, StringSplitOptions.RemoveEmptyEntries);
                 bool foundThisContext = false;
+
+                graphres.AddNode(startingpath);
+                if (startingpath == startingpathGL) graphres.FindNode(startingpath).Label.Text = startingpath;
+                else graphres.FindNode(startingpath).Label.Text = new DirectoryInfo(startingpath).Name;
+                
                 foreach (string file in files)
                 {
-                    string parentNode = "";
-                    if (startingpath == startingpathGL) parentNode = startingpath;
-                    else parentNode = new DirectoryInfo(startingpath).Name;
 
                     if (file == filename && !(!findall && foundFirst))
                     {
                         foundFirst = true;
                         foundThisContext = true;
-                        graphres.AddEdge(parentNode, file).Attr.Color = Microsoft.Msagl.Drawing.Color.Blue;
-                        graphres.FindNode(file).Attr.Color = Microsoft.Msagl.Drawing.Color.Blue;
+                        graphres.AddNode(Path.Combine(startingpath, file)).Label.Text = file;
+                        graphres.FindNode(Path.Combine(startingpath, file)).Attr.Color = Microsoft.Msagl.Drawing.Color.Blue;
+                        graphres.AddEdge(startingpath, Path.Combine(startingpath, file)).Attr.Color = Microsoft.Msagl.Drawing.Color.Blue;
+                        
                         // add label
                         if (pnl_folderloc.InvokeRequired)
                         {
@@ -146,12 +150,15 @@ namespace folder_crawler
                     }
                     else if (!(!findall && foundFirst))
                     {
-                        graphres.AddEdge(parentNode, file).Attr.Color = Microsoft.Msagl.Drawing.Color.Red;
-                        graphres.FindNode(file).Attr.Color = Microsoft.Msagl.Drawing.Color.Red;
+                        graphres.AddNode(Path.Combine(startingpath, file)).Label.Text = file;
+                        graphres.FindNode(Path.Combine(startingpath, file)).Attr.Color = Microsoft.Msagl.Drawing.Color.Red;
+                        graphres.AddEdge(startingpath, Path.Combine(startingpath, file)).Attr.Color = Microsoft.Msagl.Drawing.Color.Red;
+                        
                     }
                     else
                     {
-                        graphres.AddEdge(parentNode, file);
+                        graphres.AddNode(Path.Combine(startingpath, file)).Label.Text = file;
+                        graphres.AddEdge(startingpath, Path.Combine(startingpath, file));
                     }
                     /*gViewer1.Graph = graphres;*/
                 }
@@ -162,39 +169,33 @@ namespace folder_crawler
                 {
                     foreach (string file in allfolder)
                     {
-                        if (startingpath == startingpathGL)
-                        {
-                            graphres.AddEdge(startingpath, file);
-                        }
-                        else
-                        {
-                            graphres.AddEdge(new DirectoryInfo(startingpath).Name, file);
-                        }
+                        graphres.AddNode(Path.Combine(startingpath, file)).Label.Text = file;
+                        graphres.AddEdge(startingpath, Path.Combine(startingpath, file));
                         do_bfs(Path.Combine(startingpath, file), filename, findall, worker, e);
                     }
                 }
                 // CRITICAL SECTION STARTED
-                
+
 
                 if (foundThisContext)
                 {
                     int i = 0;
                     graphres.FindNode(startingpathGL).Attr.Color = Microsoft.Msagl.Drawing.Color.Blue;
+                    string src;
+                    string tgt = startingpathGL;
                     while (indifolder.Length > 0 && i < indifolder.Length)
                     {
+                        src = tgt;
+                        tgt = Path.Combine(tgt, indifolder[i]);
                         foreach (Microsoft.Msagl.Drawing.Edge edge in graphres.Edges)
                         {
-                            string src;
-                            string tgt = indifolder[i];
-                            if (i == 0) src = startingpathGL;
-                            else src = indifolder[i - 1];
                             if (edge.Source == src && edge.Target == tgt)
                             {
                                 graphres.RemoveEdge(edge);
                                 graphres.FindNode(tgt).Attr.Color = Microsoft.Msagl.Drawing.Color.Blue;
                                 graphres.AddEdge(src, tgt).Attr.Color = Microsoft.Msagl.Drawing.Color.Blue;
                                 i++;
-                                /*gViewer1.Graph = graphres;*/
+                                gViewer1.Graph = graphres;
                                 break;
                             }
 
@@ -206,14 +207,14 @@ namespace folder_crawler
                     int i = 0;
                     if (graphres.FindNode(startingpathGL).Attr.Color != Microsoft.Msagl.Drawing.Color.Blue)
                         graphres.FindNode(startingpathGL).Attr.Color = Microsoft.Msagl.Drawing.Color.Red;
+                    string src;
+                    string tgt = startingpathGL;
                     while (indifolder.Length > 0 && i < indifolder.Length)
                     {
+                        src = tgt;
+                        tgt = Path.Combine(tgt, indifolder[i]);
                         foreach (Microsoft.Msagl.Drawing.Edge edge in graphres.Edges)
                         {
-                            string src;
-                            string tgt = indifolder[i];
-                            if (i == 0) src = startingpathGL;
-                            else src = indifolder[i - 1];
                             if (edge.Source == src && edge.Target == tgt)
                             {
                                 if (edge.Attr.Color != Microsoft.Msagl.Drawing.Color.Blue && edge != null)
@@ -221,7 +222,7 @@ namespace folder_crawler
                                     graphres.RemoveEdge(edge);
                                     graphres.FindNode(tgt).Attr.Color = Microsoft.Msagl.Drawing.Color.Red;
                                     graphres.AddEdge(src, tgt).Attr.Color = Microsoft.Msagl.Drawing.Color.Red;
-                                    /*gViewer1.Graph = graphres;*/
+                                    gViewer1.Graph = graphres;
                                 }
                                 i++;
                                 break;
@@ -249,7 +250,7 @@ namespace folder_crawler
         }
         private void do_dfs(string startingpath, string filename, bool findall, BackgroundWorker worker, DoWorkEventArgs e)
         {
-           
+
             if (e.Cancel || interruptit || (!findall && foundFirst))
             {
                 return;
@@ -265,32 +266,31 @@ namespace folder_crawler
                 var allfolder = Directory.GetDirectories(startingpath).Select(f => new DirectoryInfo(f).Name);
                 var files = Directory.GetFiles(startingpath).Select(Path.GetFileName);
                 string toparse = startingpath.Replace(startingpathGL, "");
-                string[] indifolder = toparse.Trim().Split(new [] { Path.DirectorySeparatorChar }, StringSplitOptions.RemoveEmptyEntries);
+                string[] indifolder = toparse.Trim().Split(new[] { Path.DirectorySeparatorChar }, StringSplitOptions.RemoveEmptyEntries);
                 bool foundThisContext = false;
+
+                graphres.AddNode(startingpath);
+                if (startingpath == startingpathGL) graphres.FindNode(startingpath).Label.Text = startingpath;
+                else graphres.FindNode(startingpath).Label.Text = new DirectoryInfo(startingpath).Name;
+
                 foreach (string file in allfolder)
                 {
-                    if (startingpath == startingpathGL)
-                    {
-                        graphres.AddEdge(startingpath, file);
-                    }
-                    else
-                    {
-                        graphres.AddEdge(new DirectoryInfo(startingpath).Name, file);
-                    }
+                    graphres.AddNode(Path.Combine(startingpath, file)).Label.Text = file;
+                    graphres.AddEdge(startingpath, Path.Combine(startingpath, file));
                     do_dfs(Path.Combine(startingpath, file), filename, findall, worker, e);
                 }
+
                 foreach (string file in files)
                 {
-                    string parentNode = "";
-                    if (startingpath == startingpathGL) parentNode = startingpath;
-                    else parentNode = new DirectoryInfo(startingpath).Name;
 
                     if (file == filename && !(!findall && foundFirst))
                     {
                         foundFirst = true;
                         foundThisContext = true;
-                        graphres.AddEdge(parentNode, file).Attr.Color = Microsoft.Msagl.Drawing.Color.Blue;
-                        graphres.FindNode(file).Attr.Color = Microsoft.Msagl.Drawing.Color.Blue;
+                        graphres.AddNode(Path.Combine(startingpath, file)).Label.Text = file;
+                        graphres.FindNode(Path.Combine(startingpath, file)).Attr.Color = Microsoft.Msagl.Drawing.Color.Blue;
+                        graphres.AddEdge(startingpath, Path.Combine(startingpath, file)).Attr.Color = Microsoft.Msagl.Drawing.Color.Blue;
+
                         // add label
                         if (pnl_folderloc.InvokeRequired)
                         {
@@ -328,13 +328,18 @@ namespace folder_crawler
                             pnl_folderloc.Controls.Add(fileLinkLabel);
                         }
                         if (!findall) break;
-                    } else if (!(!findall && foundFirst))
+                    }
+                    else if (!(!findall && foundFirst))
                     {
-                        graphres.AddEdge(parentNode, file).Attr.Color = Microsoft.Msagl.Drawing.Color.Red;
-                        graphres.FindNode(file).Attr.Color = Microsoft.Msagl.Drawing.Color.Red;
-                    } else
+                        graphres.AddNode(Path.Combine(startingpath, file)).Label.Text = file;
+                        graphres.FindNode(Path.Combine(startingpath, file)).Attr.Color = Microsoft.Msagl.Drawing.Color.Red;
+                        graphres.AddEdge(startingpath, Path.Combine(startingpath, file)).Attr.Color = Microsoft.Msagl.Drawing.Color.Red;
+
+                    }
+                    else
                     {
-                        graphres.AddEdge(parentNode, file);
+                        graphres.AddNode(Path.Combine(startingpath, file)).Label.Text = file;
+                        graphres.AddEdge(startingpath, Path.Combine(startingpath, file));
                     }
                     /*gViewer1.Graph = graphres;*/
                 }
@@ -342,47 +347,48 @@ namespace folder_crawler
                 {
                     int i = 0;
                     graphres.FindNode(startingpathGL).Attr.Color = Microsoft.Msagl.Drawing.Color.Blue;
+                    string src;
+                    string tgt = startingpathGL;
                     while (indifolder.Length > 0 && i < indifolder.Length)
                     {
+                        src = tgt;
+                        tgt = Path.Combine(tgt, indifolder[i]);
                         foreach (Microsoft.Msagl.Drawing.Edge edge in graphres.Edges)
                         {
-                            string src;
-                            string tgt = indifolder[i];
-                            if (i == 0) src = startingpathGL;
-                            else src = indifolder[i - 1];
                             if (edge.Source == src && edge.Target == tgt)
                             {
                                 graphres.RemoveEdge(edge);
                                 graphres.FindNode(tgt).Attr.Color = Microsoft.Msagl.Drawing.Color.Blue;
                                 graphres.AddEdge(src, tgt).Attr.Color = Microsoft.Msagl.Drawing.Color.Blue;
                                 i++;
-                                /*gViewer1.Graph = graphres;*/
+                                gViewer1.Graph = graphres;
                                 break;
                             }
 
                         }
                     }
-                } else
+                }
+                else
                 {
                     int i = 0;
                     if (graphres.FindNode(startingpathGL).Attr.Color != Microsoft.Msagl.Drawing.Color.Blue)
                         graphres.FindNode(startingpathGL).Attr.Color = Microsoft.Msagl.Drawing.Color.Red;
+                    string src;
+                    string tgt = startingpathGL;
                     while (indifolder.Length > 0 && i < indifolder.Length)
                     {
+                        src = tgt;
+                        tgt = Path.Combine(tgt, indifolder[i]);
                         foreach (Microsoft.Msagl.Drawing.Edge edge in graphres.Edges)
                         {
-                            string src;
-                            string tgt = indifolder[i];
-                            if (i == 0) src = startingpathGL;
-                            else src = indifolder[i - 1];
                             if (edge.Source == src && edge.Target == tgt)
                             {
-                                if (edge.Attr.Color != Microsoft.Msagl.Drawing.Color.Blue)
+                                if (edge.Attr.Color != Microsoft.Msagl.Drawing.Color.Blue && edge != null)
                                 {
                                     graphres.RemoveEdge(edge);
                                     graphres.FindNode(tgt).Attr.Color = Microsoft.Msagl.Drawing.Color.Red;
                                     graphres.AddEdge(src, tgt).Attr.Color = Microsoft.Msagl.Drawing.Color.Red;
-                                    /*gViewer1.Graph = graphres;*/
+                                    gViewer1.Graph = graphres;
                                 }
                                 i++;
                                 break;
@@ -391,18 +397,19 @@ namespace folder_crawler
                         }
                     }
                 }
-            }
-            if (gViewer1.InvokeRequired)
-            {
-                gViewer1.Invoke((MethodInvoker)delegate ()
+                if (gViewer1.InvokeRequired)
+                {
+                    gViewer1.Invoke((MethodInvoker)delegate ()
+                    {
+                        gViewer1.Graph = graphres;
+                    });
+                }
+                else
                 {
                     gViewer1.Graph = graphres;
-                });
-            } else
-            {
-                gViewer1.Graph = graphres;
+                }
+                System.Threading.Thread.Sleep(100);
             }
-            System.Threading.Thread.Sleep(100);
         }
         // BACKGROUND WORKER STUFF (INCLUDE START / CANCEL BTN)
         private void btn_search_Click(object sender, EventArgs e)

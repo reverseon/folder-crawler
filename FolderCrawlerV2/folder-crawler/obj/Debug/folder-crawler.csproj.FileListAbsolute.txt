@@ -14,6 +14,7 @@ C:\reverseon\kuliah\code\STIMA\folder-crawler\folder-crawler\bin\Debug\Microsoft
 C:\reverseon\kuliah\code\STIMA\folder-crawler\folder-crawler\bin\Debug\Microsoft.Msagl.WpfGraphControl.dll
 C:\reverseon\kuliah\code\STIMA\folder-crawler\folder-crawler\obj\Debug\folder-crawler.csproj.CopyComplete
 C:\reverseon\kuliah\code\STIMA\folder-crawler\folder-crawler\obj\Debug\folder_crawler.Form1.resources
+<<<<<<< Updated upstream
 D:\Kuliah\Tingkat 2\Semester 4\IF2211 - Strategi Algoritma\folder-crawler\FolderCrawlerV2\folder-crawler\bin\Debug\folder-crawler.exe.config
 D:\Kuliah\Tingkat 2\Semester 4\IF2211 - Strategi Algoritma\folder-crawler\FolderCrawlerV2\folder-crawler\bin\Debug\folder-crawler.exe
 D:\Kuliah\Tingkat 2\Semester 4\IF2211 - Strategi Algoritma\folder-crawler\FolderCrawlerV2\folder-crawler\bin\Debug\folder-crawler.pdb
@@ -29,3 +30,21 @@ D:\Kuliah\Tingkat 2\Semester 4\IF2211 - Strategi Algoritma\folder-crawler\Folder
 D:\Kuliah\Tingkat 2\Semester 4\IF2211 - Strategi Algoritma\folder-crawler\FolderCrawlerV2\folder-crawler\obj\Debug\folder-crawler.csproj.CopyComplete
 D:\Kuliah\Tingkat 2\Semester 4\IF2211 - Strategi Algoritma\folder-crawler\FolderCrawlerV2\folder-crawler\obj\Debug\folder-crawler.exe
 D:\Kuliah\Tingkat 2\Semester 4\IF2211 - Strategi Algoritma\folder-crawler\FolderCrawlerV2\folder-crawler\obj\Debug\folder-crawler.pdb
+=======
+C:\reverseon\code\github\folder-crawler\FolderCrawlerV2\folder-crawler\bin\Debug\folder-crawler.exe.config
+C:\reverseon\code\github\folder-crawler\FolderCrawlerV2\folder-crawler\bin\Debug\folder-crawler.exe
+C:\reverseon\code\github\folder-crawler\FolderCrawlerV2\folder-crawler\bin\Debug\folder-crawler.pdb
+C:\reverseon\code\github\folder-crawler\FolderCrawlerV2\folder-crawler\bin\Debug\AutomaticGraphLayout.dll
+C:\reverseon\code\github\folder-crawler\FolderCrawlerV2\folder-crawler\bin\Debug\AutomaticGraphLayout.Drawing.dll
+C:\reverseon\code\github\folder-crawler\FolderCrawlerV2\folder-crawler\bin\Debug\Microsoft.Msagl.GraphViewerGdi.dll
+C:\reverseon\code\github\folder-crawler\FolderCrawlerV2\folder-crawler\bin\Debug\Microsoft.Msagl.WpfGraphControl.dll
+C:\reverseon\code\github\folder-crawler\FolderCrawlerV2\folder-crawler\obj\Debug\folder-crawler.csproj.AssemblyReference.cache
+C:\reverseon\code\github\folder-crawler\FolderCrawlerV2\folder-crawler\obj\Debug\folder-crawler.csproj.SuggestedBindingRedirects.cache
+C:\reverseon\code\github\folder-crawler\FolderCrawlerV2\folder-crawler\obj\Debug\folder_crawler.Form1.resources
+C:\reverseon\code\github\folder-crawler\FolderCrawlerV2\folder-crawler\obj\Debug\folder_crawler.Properties.Resources.resources
+C:\reverseon\code\github\folder-crawler\FolderCrawlerV2\folder-crawler\obj\Debug\folder-crawler.csproj.GenerateResource.cache
+C:\reverseon\code\github\folder-crawler\FolderCrawlerV2\folder-crawler\obj\Debug\folder-crawler.csproj.CoreCompileInputs.cache
+C:\reverseon\code\github\folder-crawler\FolderCrawlerV2\folder-crawler\obj\Debug\folder-crawler.csproj.CopyComplete
+C:\reverseon\code\github\folder-crawler\FolderCrawlerV2\folder-crawler\obj\Debug\folder-crawler.exe
+C:\reverseon\code\github\folder-crawler\FolderCrawlerV2\folder-crawler\obj\Debug\folder-crawler.pdb
+>>>>>>> Stashed changes
