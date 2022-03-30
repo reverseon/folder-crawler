@@ -1,0 +1,16 @@
+C:\reverseon\code\github\folder-crawler\src\folder-crawler\bin\Release\folder-crawler.exe.config
+C:\reverseon\code\github\folder-crawler\src\folder-crawler\bin\Release\folder-crawler.exe
+C:\reverseon\code\github\folder-crawler\src\folder-crawler\bin\Release\folder-crawler.pdb
+C:\reverseon\code\github\folder-crawler\src\folder-crawler\bin\Release\AutomaticGraphLayout.dll
+C:\reverseon\code\github\folder-crawler\src\folder-crawler\bin\Release\AutomaticGraphLayout.Drawing.dll
+C:\reverseon\code\github\folder-crawler\src\folder-crawler\bin\Release\Microsoft.Msagl.GraphViewerGdi.dll
+C:\reverseon\code\github\folder-crawler\src\folder-crawler\bin\Release\Microsoft.Msagl.WpfGraphControl.dll
+C:\reverseon\code\github\folder-crawler\src\folder-crawler\obj\Release\folder-crawler.csproj.AssemblyReference.cache
+C:\reverseon\code\github\folder-crawler\src\folder-crawler\obj\Release\folder-crawler.csproj.SuggestedBindingRedirects.cache
+C:\reverseon\code\github\folder-crawler\src\folder-crawler\obj\Release\folder_crawler.Form1.resources
+C:\reverseon\code\github\folder-crawler\src\folder-crawler\obj\Release\folder_crawler.Properties.Resources.resources
+C:\reverseon\code\github\folder-crawler\src\folder-crawler\obj\Release\folder-crawler.csproj.GenerateResource.cache
+C:\reverseon\code\github\folder-crawler\src\folder-crawler\obj\Release\folder-crawler.csproj.CoreCompileInputs.cache
+C:\reverseon\code\github\folder-crawler\src\folder-crawler\obj\Release\folder-crawler.csproj.CopyComplete
+C:\reverseon\code\github\folder-crawler\src\folder-crawler\obj\Release\folder-crawler.exe
+C:\reverseon\code\github\folder-crawler\src\folder-crawler\obj\Release\folder-crawler.pdb
